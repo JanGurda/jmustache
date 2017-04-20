@@ -48,23 +48,9 @@
   <properties>
     <source.level>1.8</source.level>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <gwt.version>2.8.0</gwt.version>
-    <gwt.maven.version>2.8.0</gwt.maven.version>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-dev</artifactId>
-      <version>${gwt.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.gwt</groupId>
-      <artifactId>gwt-user</artifactId>
-      <version>${gwt.version}</version>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -87,10 +73,6 @@
         <excludes>
           <exclude>com/samskivert/mustache/DefaultCollector.java</exclude>
         </excludes>
-      </resource>
-      <!-- also include the GWT-specific sources -->
-      <resource>
-        <directory>src/main/gwt</directory>
       </resource>
     </resources>
 
@@ -128,22 +110,6 @@
               Bnd*,Created-By,Include-Resource,Private-Package,Tool
             </_removeheaders>
           </instructions>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>gwt-maven-plugin</artifactId>
-        <version>${gwt.maven.version}</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>test</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <mode>htmlunit</mode>
         </configuration>
       </plugin>
 
